@@ -1,13 +1,166 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f0f0;
+}
+
+.header {
+  height: 150px;
+  background-color: salmon;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.header h3 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.header h3,
+.header button {
+  text-align: center;
+}
+
+.header button {
+  display: block;
+  margin: auto;
+  outline: none;
+  border: none;
+  border-radius: 0.25rem;
+  color: #111;
+  padding: 0.5rem 1rem;
+}
+
+.task-container {
+  grid-template-columns: 100%;
+  max-width: 1024px;
+  margin-inline: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card-wrapper {
+  border-radius: 0.25rem;
+  border-top: 12px solid #72faa8;
+  background-color: #fff;
+  padding: 1rem;
+  position: relative;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #fff;
+  background-color: #a0a0a0;
+  display: inline-block;
+  padding: 0.05rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.card-description {
+  margin-block: 1rem 2rem;
+  color: #666;
+  font-size: 1rem;
+}
+
+.buttons {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.5rem;
+}
+
+.buttons i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.button-edit {
+  color: #b4b4b4;
+  margin-right: 0.5rem;
+}
+
+.button-delete {
+  color: #fb3a45;
+}
+
+.modal {
+  z-index: 99;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-form {
+  width: 300px;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.25rem;
+  position: relative;
+}
+
+.modal-form label {
+  display: block;
+}
+
+.modal-form input,
+.modal-form textarea {
+  width: 100%;
+  outline: none;
+  color: #b4b4b4;
+  border: 1px solid #b4b4b4;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+}
+
+.modal-form button {
+  padding: 0.75rem 2.25rem;
+  width: 100%;
+  background-color: salmon;
+  outline: none;
+  border: none;
+  border-radius: 0.25rem;
+  color: #fff;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: #f6f6f6;
+  border-radius: 0.25rem;
+  color: #aeaeae;
+}
+
+@media screen and (min-width: 768px) {
+  .task-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modal-form {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .task-container {
+    margin-inline: auto;
+    row-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
